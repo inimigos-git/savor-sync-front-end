@@ -1,0 +1,29 @@
+.sidebar {
+    background-color: var(--gray-800);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    
+    .container{
+        position: fixed;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin: 0.5rem 0;
+        }
+    }
+}

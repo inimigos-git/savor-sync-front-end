@@ -5,7 +5,7 @@ import "../../assets/scss/main.scss";
 export const SearchBar = () => {
   return (
     <>
-      <section className="row">
+      <section className="row mb-default">
         <div className={`col-8 col-xs-8 ${styles.pos_relative}`}>
           <Search className={styles.imgPos} />
           <input

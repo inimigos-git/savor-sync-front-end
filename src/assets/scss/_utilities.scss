@@ -3,3 +3,23 @@
 .mb-default {
   margin-bottom: $margin-bottom;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.align-itens-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}

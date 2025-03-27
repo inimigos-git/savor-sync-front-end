@@ -1,0 +1,51 @@
+@use "sass:math";
+@use "mixins" as *;
+@use "variables" as *;
+
+.container {
+  width: 100%;
+  max-width: $max-width-lg;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+}
+
+[class^="col-"] {
+  padding: 8px;
+  flex: 1;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: math.div(100%, 12) * $i;
+  }
+}
+
+@include responsive(md) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: math.div(100%, 12) * $i;
+    }
+  }
+}
+
+@include responsive(sm) {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      width: math.div(100%, 12) * $i;
+    }
+  }
+}
+
+@include responsive(xs) {
+  @for $i from 1 through 12 {
+    .col-xs-#{$i} {
+      width: math.div(100%, 12) * $i;
+    }
+  }
+}

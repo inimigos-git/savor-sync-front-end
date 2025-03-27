@@ -1,21 +1,20 @@
 "use client";
 import { Route, Routes } from "react-router-dom";
-import styles from "./styles/global.module.scss";
-import { Header } from "./components/Header/Header";
-import { Restaurantes } from "./pages/Restaurantes";
-import { Home } from "./pages/Home";
-import { Sidebar } from "./components/Sidebar/Sidebar";
+import { Header } from "./components/header/header";
+import { Sidebar } from "./components/sidebar/sidebar";
+import { Home } from "./pages/home/home";
+import { Restaurants } from "./pages/restaurants/restaurants";
 
 function App() {
   return (
     <>
       <Header />
-      <div className={styles.wrapper}>
+      <div>
         <Sidebar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Restaurantes" element={<Restaurantes />} />
+            <Route path="/Restaurantes" element={<Restaurants />} />
           </Routes>
         </main>
       </div>

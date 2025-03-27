@@ -1,0 +1,57 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.responsive-element {
+  @include responsive(lg) {
+    display: none;
+  }
+}
+
+.hidden-lg {
+  @include responsive(lg) {
+    display: none;
+  }
+}
+.hidden-md {
+  @include responsive(md) {
+    display: none;
+  }
+}
+.hidden-sm {
+  @include responsive(sm) {
+    display: none;
+  }
+}
+.hidden-xs {
+  @include responsive(xs) {
+    display: none;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+@include responsive(md) {
+  .text-md-center {
+    text-align: center;
+  }
+}
+
+@include responsive(sm) {
+  .text-sm-center {
+    text-align: center;
+  }
+}
+
+@include responsive(xs) {
+  .text-xs-center {
+    text-align: center;
+  }
+}

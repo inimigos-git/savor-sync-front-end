@@ -1,0 +1,24 @@
+@use "sass:color";
+@use "variables" as *;
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: $primary-color;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background: color.adjust($primary-color, $lightness: -10%);
+  }
+}
+
+.btn-secondary {
+  background: $secondary-color;
+
+  &:hover {
+    background: color.adjust($secondary-color, $lightness: -10%);
+  }
+}

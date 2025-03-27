@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}

@@ -1,0 +1,16 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.wrapper {
+  width: 100%;
+  max-width: $max-width-lg;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include responsive(md) {
+    max-width: $max-width-md;
+  }
+  @include responsive(sm) {
+    max-width: $max-width-sm;
+  }
+}

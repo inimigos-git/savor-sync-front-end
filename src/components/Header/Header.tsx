@@ -9,7 +9,7 @@ export const Header = () => {
       <nav className={styles.headerNav}>
         <div className={styles.headerNav_logo}>
           <Link to="/" className={styles.headerNav_logo}>
-            SavorSync
+            SaviorSync
           </Link>
         </div>
         <ul className={styles.headerNav_menu}>

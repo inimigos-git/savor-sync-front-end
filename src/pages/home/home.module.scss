@@ -1,0 +1,10 @@
+@use "../../assets/scss/typography" as *;
+
+.homeContainer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  h1 {
+    @include heading-1;
+  }
+}

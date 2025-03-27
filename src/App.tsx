@@ -1,6 +1,7 @@
 "use client";
-import { Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/header/header";
+import Home from "./pages/home/home";
 
 function App() {
   return (
@@ -10,8 +11,7 @@ function App() {
         {/* <Sidebar /> */}
         <main>
           <Routes>
-            {/* <Route path="/" element={<Home />} />
-            <Route path="/Restaurantes" element={<Restaurants />} /> */}
+            <Route path="/" element={<Home />} />
           </Routes>
         </main>
       </div>

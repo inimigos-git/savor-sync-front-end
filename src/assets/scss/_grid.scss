@@ -12,24 +12,29 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: -8px;
+  gap: $row-gap;
 }
 
 [class^="col-"] {
-  padding: 8px;
-  flex: 1;
+  padding: 8px 0;
+}
+
+@include responsive(xs) {
+  [class^="col-"] {
+    width: 100%;
+  }
 }
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    width: math.div(100%, 12) * $i;
+    width: calc((100% / 12) * #{$i} - #{$row-gap});
   }
 }
 
 @include responsive(md) {
   @for $i from 1 through 12 {
     .col-md-#{$i} {
-      width: math.div(100%, 12) * $i;
+      width: calc((100% / 12) * #{$i} - #{$row-gap});
     }
   }
 }
@@ -37,7 +42,7 @@
 @include responsive(sm) {
   @for $i from 1 through 12 {
     .col-sm-#{$i} {
-      width: math.div(100%, 12) * $i;
+      width: calc((100% / 12) * #{$i} - #{$row-gap});
     }
   }
 }
@@ -45,7 +50,7 @@
 @include responsive(xs) {
   @for $i from 1 through 12 {
     .col-xs-#{$i} {
-      width: math.div(100%, 12) * $i;
+      width: 100%;
     }
   }
 }

@@ -1,0 +1,25 @@
+@use "../../assets/scss/mixins" as *;
+
+@include responsive(lg) {
+  [class^="col-"] {
+    width: 100%;
+  }
+}
+
+.pos_relative {
+  position: relative;
+
+  .imgPos {
+    position: absolute;
+    bottom: 26%;
+    left: 12px;
+    width: 15px;
+  }
+
+  input {
+    padding-left: 32px;
+    font-size: small;
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.185);
+  }
+}

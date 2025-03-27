@@ -1,41 +1,32 @@
 "use client";
-import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
+import "../../assets/scss/main.scss";
 
 export const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleButton = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <header>
-      <nav>
-        <Link to="/" className={styles.title}>
-          SAVORSYNC
-        </Link>
-        <div className={styles.menu} onClick={handleButton}>
-          <span></span>
-          <span></span>
-          <span></span>
+      <nav className={styles.headerNav}>
+        <div className={styles.headerNav_logo}>
+          <Link to="/" className={styles.headerNav_logo}>
+            SavorSync
+          </Link>
         </div>
-        <ul className={menuOpen ? styles.open : ""}>
+        <ul className={styles.headerNav_menu}>
           <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-            >
-              Home
+            <NavLink to="my-reservations">Minhas Reservas</NavLink>
+          </li>
+          <li>
+            <NavLink to="favorites">Favoritos</NavLink>
+          </li>
+          <li>
+            <NavLink to="signin" className="btn-secondary">
+              Entrar
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="sobre"
-              className={({ isActive }) => (isActive ? styles.active : "")}
-            >
-              Restaurantes
+            <NavLink to="signup" className="btn">
+              Cadastrar
             </NavLink>
           </li>
         </ul>

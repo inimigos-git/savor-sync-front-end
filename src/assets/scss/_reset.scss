@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "typography" as *;
 
 * {
   margin: 0;
@@ -7,7 +8,31 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: $text-color;
   background: $background-color;
+  font-family: $font-family-base;
+  @include text-base;
+  @include font-regular;
+  color: var(--foreground);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
 }

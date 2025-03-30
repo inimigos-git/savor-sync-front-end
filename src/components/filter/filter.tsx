@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Funnel } from "lucide-react";
 import styles from "./filter.module.scss";
 import "../../assets/scss/main.scss";
@@ -22,7 +22,7 @@ export const FilterCuisineTypes = () => {
     fetchCuisineTypes();
   }, []);
   return (
-    <div className="d-flex align-itens-center gap-10">
+    <div className="d-flex align-itens-center gap-10 mb-default">
       <div className={`d-flex align-itens-center ${styles.filterBtn}`}>
         <Funnel className={styles.filterLogo} />
         <p>Filtros</p>

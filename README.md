@@ -92,10 +92,10 @@ SavorSyncFront/
 
 ```sh
 # Clone o repositório
-git clone https://github.com/EdEddAEddy/SavorSyncFront.git
+git clone https://github.com/EdEddAEddy/savor-sync-front-end.git
 
 # Entre no diretório
-cd SavorSyncFront
+cd savor-sync-front-end
 
 # Instale as dependências
 npm install  # ou yarn install
@@ -103,16 +103,6 @@ npm install  # ou yarn install
 # Inicie o servidor de desenvolvimento
 npm run dev  # ou yarn dev
 ```
-
-## 📌 Configuração
-
-Caso precise definir variáveis de ambiente, crie um arquivo `.env` na raiz do projeto e configure as chaves necessárias.
-
-## 📌 Próximos Passos
-
-- Implementação da API de reservas
-- Melhorias na UI/UX
-- Testes automatizados
 
 ## ✨ Contato
 

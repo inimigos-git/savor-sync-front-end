@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Funnel } from "lucide-react";
 import styles from "./filter.module.scss";
-import "../../assets/scss/main.scss";
+import "@/assets/scss/main.scss";
 
 export const FilterCuisineTypes = () => {
   const [cuisineTypes, setCuisineTypes] = useState([]);

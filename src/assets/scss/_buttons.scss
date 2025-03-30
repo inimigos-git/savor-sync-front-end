@@ -5,7 +5,7 @@
   padding: 10px 20px;
   background: $primary-color;
   color: $secondary-color;
-  border-radius: 5px;
+  border-radius: calc($border-radius-default/2);
   transition: background 0.3s;
 
   &:hover {
@@ -16,7 +16,7 @@
 .btn-secondary {
   background: $secondary-color;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 4%;
   transition: background 0.3s;
   border: 1px solid $detail-color;
 

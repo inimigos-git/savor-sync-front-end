@@ -1,7 +1,7 @@
 "use client";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
-import "../../assets/scss/main.scss";
+import "@/assets/scss/main.scss";
 
 export const Header = () => {
   return (

@@ -1,0 +1,26 @@
+@use "@/assets/scss/variables" as *;
+
+.cardRestaurant {
+  overflow: hidden;
+  border-radius: $border-radius-default;
+  border: 1px solid $detail-color;
+
+  .cardRestaurant__image {
+    position: relative;
+
+    .restaurantImage {
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .cardRestaurant_price {
+      position: absolute;
+      top: 5%;
+      right: 2.5%;
+      border-radius: calc($border-radius-default * 3);
+      font-size: 0.688rem;
+      font-weight: 600;
+      padding: 4px 8px;
+    }
+  }
+}

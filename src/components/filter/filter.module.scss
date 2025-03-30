@@ -1,9 +1,9 @@
-@use "../../assets/scss/variables" as *;
+@use "@/assets/scss/variables" as *;
 
 .filterBtn {
   border: 1px solid $detail-color;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: $border-radius-default;
   gap: 5px;
 
   .filterLogo {
@@ -20,6 +20,6 @@
   font-weight: 500;
   border: 1px solid $detail-color;
   padding: 8px;
-  border-radius: 24px;
+  border-radius: calc($border-radius-default * 3);
   font-size: small;
 }

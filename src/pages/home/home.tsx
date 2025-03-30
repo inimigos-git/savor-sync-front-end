@@ -1,6 +1,6 @@
-import CardsRestaurant from "../../components/cardsRestaurant/cardsRestaurant";
-import FilterCuisineTypes from "../../components/filter/filter";
-import SearchBar from "../../components/searchBar/searchbar";
+import CardsRestaurant from "@/components/cardsRestaurant/cardsRestaurant";
+import FilterCuisineTypes from "@/components/filter/filter";
+import SearchBar from "@/components/searchBar/searchbar";
 import styles from "./home.module.scss";
 
 const Home = () => {

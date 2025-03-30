@@ -1,6 +1,6 @@
 import { Search, MapPin } from "lucide-react";
 import styles from "./searchbar.module.scss";
-import "../../assets/scss/main.scss";
+import "@/assets/scss/main.scss";
 
 export const SearchBar = () => {
   return (

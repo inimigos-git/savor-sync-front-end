@@ -1,5 +1,5 @@
-@use "../../assets/scss/mixins" as *;
-@use "../../assets/scss/variables" as *;
+@use "@/assets/scss/mixins" as *;
+@use "@/assets/scss/variables" as *;
 
 @include responsive(lg) {
   [class^="col-"] {
@@ -20,7 +20,7 @@
   input {
     padding-left: 32px;
     font-size: small;
-    border-radius: 8px;
+    border-radius: $border-radius-default;
     border: 1px solid $detail-color;
 
     &:focus {

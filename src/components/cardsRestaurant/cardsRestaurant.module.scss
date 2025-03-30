@@ -5,7 +5,7 @@
   border-radius: $border-radius-default;
   border: 1px solid $detail-color;
 
-  .cardRestaurant__image {
+  .cardRestaurant_image {
     position: relative;
 
     .restaurantImage {
@@ -22,5 +22,28 @@
       font-weight: 600;
       padding: 4px 8px;
     }
+  }
+
+  .cardRestaurant_content {
+    padding: 1rem;
+
+    .cardRestaurant_title {
+      justify-content: space-between;
+      align-items: center;
+
+      .cardRestaurant_starContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        .cardRestaurant_star {
+          width: 16px;
+        }
+      }
+    }
+  }
+  .cardRestaurant_btn {
+    padding: 0 1rem 1rem 1rem;
   }
 }

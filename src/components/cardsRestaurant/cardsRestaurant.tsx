@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Star } from "lucide-react";
 import placeholderImg from "@/assets/img/placeholder.svg";
 import styles from "./cardsRestaurant.module.scss";
 import "@/assets/scss/main.scss";
@@ -63,7 +64,7 @@ export const CardsRestaurant = () => {
             return (
               <li key={restaurant.id} className="col-3">
                 <section className={styles.cardRestaurant}>
-                  <div className={styles.cardRestaurant__image}>
+                  <div className={styles.cardRestaurant_image}>
                     <img
                       src={placeholderImg}
                       alt={restaurant.name}
@@ -74,15 +75,22 @@ export const CardsRestaurant = () => {
                     </p>
                   </div>
                   <div>
-                    <div>
-                      <p>{restaurant.name}</p>
-                      <p>{averageRating}</p>
+                    <div className={styles.cardRestaurant_content}>
+                      <div className={`d-flex ${styles.cardRestaurant_title}`}>
+                        <p>{restaurant.name}</p>
+                        <p className={styles.cardRestaurant_starContainer}>
+                          <Star className={styles.cardRestaurant_star} />
+                          {averageRating}
+                        </p>
+                      </div>
+                      <div>
+                        <p>{restaurant.cuisine_type}</p>
+                        <p>{restaurant.address}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p>{restaurant.cuisine_type}</p>
-                      <p>{restaurant.address}</p>
+                    <div className={styles.cardRestaurant_btn}>
+                      <button className="btn">Reservar</button>
                     </div>
-                    <button className="btn">Reservar</button>
                   </div>
                 </section>
               </li>

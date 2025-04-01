@@ -74,22 +74,28 @@ export const CardsRestaurant = () => {
                       {`R${PriceRange}`}
                     </p>
                   </div>
-                  <div>
+                  <div className={styles.cardRestaurant_container}>
                     <div className={styles.cardRestaurant_content}>
-                      <div className={`d-flex ${styles.cardRestaurant_title}`}>
-                        <p>{restaurant.name}</p>
+                      <div
+                        className={`d-flex mb-1 ${styles.cardRestaurant_titleContain}`}
+                      >
+                        <p className={styles.cardRestaurant_title}>
+                          {restaurant.name}
+                        </p>
                         <p className={styles.cardRestaurant_starContainer}>
                           <Star className={styles.cardRestaurant_star} />
                           {averageRating}
                         </p>
                       </div>
-                      <div>
-                        <p>{restaurant.cuisine_type}</p>
-                        <p>{restaurant.address}</p>
+                      <div className="mb-1">
+                        <p className={styles.cuisine}>
+                          {restaurant.cuisine_type}
+                        </p>
                       </div>
+                      <p>{restaurant.address}</p>
                     </div>
                     <div className={styles.cardRestaurant_btn}>
-                      <button className="btn">Reservar</button>
+                      <a className="btn">Reservar</a>
                     </div>
                   </div>
                 </section>

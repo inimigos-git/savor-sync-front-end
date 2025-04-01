@@ -1,9 +1,11 @@
 @use "@/assets/scss/variables" as *;
+@use "@/assets/scss/typography" as *;
 
 .cardRestaurant {
   overflow: hidden;
   border-radius: $border-radius-default;
   border: 1px solid $detail-color;
+  height: 100%;
 
   .cardRestaurant_image {
     position: relative;
@@ -19,31 +21,60 @@
       right: 2.5%;
       border-radius: calc($border-radius-default * 3);
       font-size: 0.688rem;
-      font-weight: 600;
+      font-weight: $font-weight-semibold;
       padding: 4px 8px;
     }
   }
 
-  .cardRestaurant_content {
-    padding: 1rem;
+  .cardRestaurant_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    .cardRestaurant_title {
-      justify-content: space-between;
-      align-items: center;
+    .cardRestaurant_content {
+      padding: 1rem;
 
-      .cardRestaurant_starContainer {
-        display: flex;
-        justify-content: center;
+      .cardRestaurant_titleContain {
+        justify-content: space-between;
         align-items: center;
-        gap: 4px;
 
-        .cardRestaurant_star {
-          width: 16px;
+        .cardRestaurant_title {
+          @include text-lg;
+          font-weight: $font-weight-semibold;
+        }
+
+        .cardRestaurant_starContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          @include text-sm;
+          font-weight: $font-weight-medium;
+
+          .cardRestaurant_star {
+            width: 16px;
+          }
         }
       }
     }
   }
+
+  .cuisine {
+    @include text-xs;
+    font-weight: $font-weight-medium;
+    display: inline;
+    border: 1px solid $detail-color;
+    padding: 2px 8px;
+    border-radius: calc($border-radius-default * 2);
+  }
+
   .cardRestaurant_btn {
     padding: 0 1rem 1rem 1rem;
+
+    a {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
   }
 }

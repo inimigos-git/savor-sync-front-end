@@ -1,4 +1,5 @@
 @use "@/assets/scss/variables" as *;
+@use "@/assets/scss/typography" as *;
 
 .filterBtn {
   border: 1px solid $detail-color;
@@ -17,7 +18,7 @@
 }
 
 .filterItens li {
-  font-weight: 500;
+  font-weight: $font-weight-semibold;
   border: 1px solid $detail-color;
   padding: 8px;
   border-radius: calc($border-radius-default * 3);

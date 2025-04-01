@@ -1,7 +1,7 @@
 import CardsRestaurant from "@/components/cardsRestaurant/cardsRestaurant";
+import styles from "./home.module.scss";
 import FilterCuisineTypes from "@/components/filter/filter";
 import SearchBar from "@/components/searchBar/searchbar";
-import styles from "./home.module.scss";
 
 const Home = () => {
   return (

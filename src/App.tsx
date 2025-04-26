@@ -1,6 +1,6 @@
 "use client";
 import { Route, Routes } from "react-router-dom";
-import { Header } from "./components/header/header";
+import { Header } from "@/components/Header/Header";
 import Home from "./pages/home/home";
 
 function App() {

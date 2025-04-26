@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Funnel } from "lucide-react";
 import styles from "./filter.module.scss";
 import "@/assets/scss/main.scss";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export const FilterCuisineTypes = () => {
   const [cuisineTypes, setCuisineTypes] = useState([]);
@@ -10,7 +11,7 @@ export const FilterCuisineTypes = () => {
     const fetchCuisineTypes = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3000/restaurant/filters/cuisine-types"
+          `${apiUrl}/restaurant/filters/cuisine-types`,
         );
         const data = await response.json();
         setCuisineTypes(data.cuisineTypes);

@@ -1,64 +1,57 @@
-import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import placeholderImg from "@/assets/img/placeholder.svg";
 import styles from "./cardsRestaurant.module.scss";
 import "@/assets/scss/main.scss";
 
-export const CardsRestaurant = () => {
-  interface Review {
-    rating: number;
-  }
+interface Review {
+  rating: number;
+}
 
-  interface Restaurant {
-    id: number;
-    name: string;
-    address: string;
-    price_range: string;
-    cuisine_type: string;
-    Reviews: Review[];
-  }
+interface Restaurant {
+  id: number;
+  name: string;
+  address: string;
+  price_range: string;
+  cuisine_type: string;
+  Reviews?: Review[];
+  avg_rating?: number | string | null;
+}
 
-  const calculateAverageRating = (reviews: Review[]) => {
-    if (reviews.length === 0) return "0";
-    const total = reviews.reduce((sum, review) => sum + review.rating, 0);
-    return (total / reviews.length).toFixed(1);
+interface RestaurantListProps {
+  restaurants: Restaurant[];
+}
+
+const calculateAverageRating = (reviews?: Review[]) => {
+  if (!reviews || reviews.length === 0) return "0";
+  const total = reviews.reduce((sum, review) => sum + review.rating, 0);
+  return (total / reviews.length).toFixed(1);
+};
+
+const convertPriceRange = (priceRange: "one" | "two" | "three" | "four") => {
+  const range = {
+    one: "$",
+    two: "$$",
+    three: "$$$",
+    four: "$$$$",
   };
+  return range[priceRange];
+};
 
-  const convertPriceRange = (priceRange: "one" | "two" | "three" | "four") => {
-    const range = {
-      one: "$",
-      two: "$$",
-      three: "$$$",
-      four: "$$$$",
-    };
-
-    return range[priceRange];
-  };
-
-  const [restaurant, setRestaurant] = useState<Restaurant[]>([]);
-
-  useEffect(() => {
-    const fetchRestaurant = async () => {
-      try {
-        const response = await fetch(
-          "http://localhost:3000/restaurant?page=1&limit=4"
-        );
-        const data = await response.json();
-        setRestaurant(data.data);
-      } catch (error) {
-        console.error("Erro ao buscar restaurantes:", error);
-      }
-    };
-    fetchRestaurant();
-  }, []);
+export const CardsRestaurant = ({ restaurants }: RestaurantListProps) => {
   return (
     <div>
       <ul className="row">
-        {restaurant.length > 0 ? (
-          restaurant.map((restaurant) => {
-            const averageRating = calculateAverageRating(restaurant.Reviews);
+        {restaurants.length > 0 ? (
+          restaurants.map((restaurant) => {
+            const averageRating = restaurant.Reviews
+              ? calculateAverageRating(restaurant.Reviews)
+              : restaurant.avg_rating !== null &&
+                  restaurant.avg_rating !== undefined
+                ? Number(restaurant.avg_rating).toFixed(1)
+                : "0";
+
             const PriceRange = convertPriceRange(
-              restaurant.price_range as "one" | "two" | "three" | "four"
+              restaurant.price_range as "one" | "two" | "three" | "four",
             );
 
             return (
